@@ -13,5 +13,7 @@ public class main {
         Joueur joueur2 = new Joueur();
             player = "joueur n°2";
             joueur2.choix(player);
+
+
     }
 }

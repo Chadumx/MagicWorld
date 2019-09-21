@@ -7,14 +7,15 @@ public class Joueur {
     Scanner clavier = new Scanner(System.in);
     int choix;
     String type;
+    String temp = null;
 
     public void choix(String player){
 
-        System.out.printf("choix du ppersonnage %s\n", player);
+        System.out.printf("Création du personnage du %s\n", player);
 
         do{
 
-            System.out.println("1: Guerrier\n2: Rôdeur\n3: Mage\n");
+            System.out.println("Veuillez choisir la classe de votre personnage (1: Guerrier 2: Rôdeur 3: Mage)\n");
             choix = clavier.nextInt();
 
             if ( choix == 1){
@@ -28,6 +29,12 @@ public class Joueur {
             }
         } while ( choix <= 0 || choix >= 4);
 
-        System.out.printf("%s, vous avez choisie le personnage de type %s\n\n", player, type);
+        if (player == "joueur n°1"){
+            temp = "Woarg";
+        } else {
+            temp = "Abracadabra";
+        }
+
+        System.out.printf("%sje suis le %s du %s\n\n", temp, type, player);
      }
 }
