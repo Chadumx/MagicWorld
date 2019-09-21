@@ -12,10 +12,11 @@ public class Joueur {
     public void choix(String player){
 
         System.out.printf("Création du personnage du %s\n", player);
+        System.out.print("Veuillez choisir la classe de votre personnage ");
 
         do{
 
-            System.out.println("Veuillez choisir la classe de votre personnage (1: Guerrier 2: Rôdeur 3: Mage)\n");
+            System.out.println("(1: Guerrier 2: Rôdeur 3: Mage)");
             choix = clavier.nextInt();
 
             if ( choix == 1){
@@ -25,7 +26,7 @@ public class Joueur {
             } else if ( choix == 3) {
                 type = "Mage";
             }else {
-                System.out.println("Veuillez choisir parmie les propositions donner !\n");
+                System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }
         } while ( choix <= 0 || choix >= 4);
 
@@ -35,6 +36,6 @@ public class Joueur {
             temp = "Abracadabra";
         }
 
-        System.out.printf("%sje suis le %s du %s\n\n", temp, type, player);
+        System.out.printf("%s je suis le %s du %s\n", temp, type, player);
      }
 }

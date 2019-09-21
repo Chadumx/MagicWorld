@@ -1,6 +1,6 @@
 package com.christopher.MagicWorld;
 
-public class main {
+public class MagicWorld {
 
     public static void main(String[] args) {
 
