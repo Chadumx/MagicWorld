@@ -1,16 +1,21 @@
 package com.christopher.MagicWorld;
 
+import java.util.Scanner;
+
 public class Joueur {
 
+    Scanner clavier = new Scanner(System.in);
     int choix;
     String type;
 
-    public void choix(int choix){
+    public void choix(String player){
 
-        System.out.println("choix du ppersonnage :\n");
+        System.out.printf("choix du ppersonnage %s\n", player);
 
         do{
+
             System.out.println("1: Guerrier\n2: Rôdeur\n3: Mage\n");
+            choix = clavier.nextInt();
 
             if ( choix == 1){
                 type = "Guerrier";
@@ -23,5 +28,6 @@ public class Joueur {
             }
         } while ( choix <= 0 || choix >= 4);
 
+        System.out.printf("%s, vous avez choisie le personnage de type %s\n\n", player, type);
      }
 }
