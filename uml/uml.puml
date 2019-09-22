@@ -1,0 +1,32 @@
+@startuml
+
+class Joueur {
+- choix : int
+- type : String
+- temp : String
+- type : Personnage
++ choix()
+}
+
+abstract Personnage{
+
+}
+
+class Guerrier {
+ }
+
+class Mage {
+}
+
+class Rodeur {
+}
+
+
+Personnage <|-- Guerrier
+Personnage <|-- Rodeur
+Personnage <|-- Mage
+
+Personnage *-- Joueur
+
+
+@enduml

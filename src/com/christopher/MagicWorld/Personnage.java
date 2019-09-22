@@ -2,7 +2,10 @@ package com.christopher.MagicWorld;
 
 import java.util.Scanner;
 
-public class Personnage {
+public abstract class Personnage {
+
+    public abstract AttaqueInterface AttaqueBase();
+    public abstract AttaqueInterface AttaqueSpecial();
 
     Scanner clavier = new Scanner(System.in);
 
@@ -18,21 +21,21 @@ public class Personnage {
         this.intelligence = intelligence;
     }
 
-    public void remplir(String player){
+    public Personnage remplir(String player){
 
         do {
 
             System.out.println("Niveau du personnage ?");
-                niveau = clavier.nextInt();
+                this.niveau = clavier.nextInt();
 
             System.out.println("Force du personnage ?");
-                force = clavier.nextInt();
+                this.force = clavier.nextInt();
 
             System.out.println("agilité du personnage ?");
-                agilite = clavier.nextInt();
+                this.agilite = clavier.nextInt();
 
             System.out.println("Intelligence du personnage ?");
-                intelligence = clavier.nextInt();
+                this.intelligence = clavier.nextInt();
 
             if (niveau != force + agilite + intelligence){
                 System.out.println("La somme total de la Force, de l'Agilité et de l'Intellignace doit être égal au niveau : \nRecommencez :");
@@ -47,7 +50,8 @@ public class Personnage {
             temp = "Abracadabra";
         }
 
-        System.out.printf("%s je suis le %s du %s\n", temp, Joueur.getType(), player);
+        System.out.printf("%s je suis le %s du %s\n", temp,/** ne pas oublier l'abstraction */ , player);
+        return this;
 
     }
 }
