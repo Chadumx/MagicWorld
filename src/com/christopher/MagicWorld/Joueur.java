@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Joueur {
 
     Scanner clavier = new Scanner(System.in);
-    int choix;
-    String type;
-    String temp = null;
+    private int choix;
+    private String type;
+    private String temp = null;
 
     public void choix(String player){
 
