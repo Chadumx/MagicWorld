@@ -1,47 +1,53 @@
 package com.christopher.MagicWorld;
 
+import java.util.Scanner;
+
 public class Personnage {
-    private int niveau;
-    private int force;
-    private int agilite;
-    private int intelligence;
 
-    public void presonnage(int niveau, int force, int agilite, int intelligence){
+    Scanner clavier = new Scanner(System.in);
+
+    private int niveau, force, agilite, intelligence;
+    private int nbr;
+
+    private String temp = null;
+
+    public void personnage(int niveau, int force, int agilite, int intelligence){
         this.niveau = niveau;
         this.force = force;
         this.agilite = agilite;
         this.intelligence = intelligence;
     }
 
-    public int getNiveau() {
-        return niveau;
-    }
+    public void remplir(String player){
 
-    public void setNiveau(int niveau) {
-        this.niveau = niveau;
-    }
+        do {
 
-    public int getForce() {
-        return force;
-    }
+            System.out.println("Niveau du personnage ?");
+                niveau = clavier.nextInt();
 
-    public void setForce(int force) {
-        this.force = force;
-    }
+            System.out.println("Force du personnage ?");
+                force = clavier.nextInt();
 
-    public int getAgilite() {
-        return agilite;
-    }
+            System.out.println("agilité du personnage ?");
+                agilite = clavier.nextInt();
 
-    public void setAgilite(int agilite) {
-        this.agilite = agilite;
-    }
+            System.out.println("Intelligence du personnage ?");
+                intelligence = clavier.nextInt();
 
-    public int getIntelligence() {
-        return intelligence;
-    }
+            if (niveau != force + agilite + intelligence){
+                System.out.println("La somme total de la Force, de l'Agilité et de l'Intellignace doit être égal au niveau : \nRecommencez :");
+            }
 
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
+        } while (niveau != force + agilite + intelligence);
+
+
+        if (player == "joueur n°1"){
+            temp = "Woarg";
+        } else {
+            temp = "Abracadabra";
+        }
+
+        System.out.printf("%s je suis le %s du %s\n", temp, Joueur.getType(), player);
+
     }
 }

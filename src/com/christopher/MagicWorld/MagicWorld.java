@@ -1,5 +1,7 @@
 package com.christopher.MagicWorld;
 
+import com.christopher.MagicWorld.Joueur;
+
 public class MagicWorld {
 
     public static void main(String[] args) {

@@ -7,7 +7,6 @@ public class Joueur {
     Scanner clavier = new Scanner(System.in);
     private int choix;
     private String type;
-    private String temp = null;
 
     public void choix(String player){
 
@@ -29,13 +28,9 @@ public class Joueur {
                 System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }
         } while ( choix <= 0 || choix >= 4);
-
-        if (player == "joueur n°1"){
-            temp = "Woarg";
-        } else {
-            temp = "Abracadabra";
-        }
-
-        System.out.printf("%s je suis le %s du %s\n", temp, type, player);
      }
+
+    public String getType() {
+        return type;
+    }
 }
