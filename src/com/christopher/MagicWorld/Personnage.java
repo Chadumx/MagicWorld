@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public abstract class Personnage {
 
-    public abstract AttaqueInterface AttaqueBase();
-    public abstract AttaqueInterface AttaqueSpecial();
+    public abstract String getType();
 
     Scanner clavier = new Scanner(System.in);
 
@@ -14,15 +13,14 @@ public abstract class Personnage {
 
     private String temp = null;
 
-    public void personnage(int niveau, int force, int agilite, int intelligence){
+    public void personnage (int niveau, int force, int agilite, int intelligence) {
         this.niveau = niveau;
         this.force = force;
         this.agilite = agilite;
         this.intelligence = intelligence;
     }
 
-    public Personnage remplir(String player){
-
+    public Personnage remplir (String player) {
         do {
 
             System.out.println("Niveau du personnage ?");
@@ -50,7 +48,8 @@ public abstract class Personnage {
             temp = "Abracadabra";
         }
 
-        System.out.printf("%s je suis le %s du %s\n", temp,/** ne pas oublier l'abstraction */ , player);
+        System.out.printf("%s je suis le %s du %s\n", temp, this.getType() , player);
+
         return this;
 
     }

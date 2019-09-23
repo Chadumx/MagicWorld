@@ -21,12 +21,44 @@ class Mage {
 class Rodeur {
 }
 
+interface Attaque {
+}
+
+abstract attaqueSpecial {
+}
+
+abstract attaqueBasique {
+}
+
+class attaqueBasiqueGuerrier {
+}
+
+class attaqueSpecialGuerrier {
+}
+
+class attaqueBasiqueMage {
+}
+
+class attaqueSpecialMage {
+}
+
+Attaque -- attaqueSpecial : < Implement
+Attaque -- attaqueBasique : < Implement
+attaqueBasique <|-- attaqueBasiqueGuerrier
+attaqueSpecial <|-- attaqueSpecialGuerrier
+attaqueBasique <|-- attaqueBasiqueMage
+attaqueSpecial <|-- attaqueSpecialMage
+
+
+
+
 
 Personnage <|-- Guerrier
 Personnage <|-- Rodeur
 Personnage <|-- Mage
 
-Personnage *-- Joueur
+Personnage --* Joueur
+Personnage *-- Attaque
 
 
 @enduml

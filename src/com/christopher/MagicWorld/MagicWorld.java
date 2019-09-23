@@ -17,5 +17,7 @@ public class MagicWorld {
             joueur2.choix(player);
 
 
+
+
     }
 }

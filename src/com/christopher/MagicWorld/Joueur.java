@@ -2,12 +2,20 @@ package com.christopher.MagicWorld;
 
 import java.util.Scanner;
 
+/**
+ * @author christopher
+ */
 public class Joueur {
 
     Scanner clavier = new Scanner(System.in);
 
     private Personnage classe;
 
+    /**
+     * Choix du personnage
+     *
+     * @param player String
+     */
     public void choix(String player){
 
         System.out.printf("Création du personnage du %s\n", player);
