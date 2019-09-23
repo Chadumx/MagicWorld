@@ -1,7 +1,10 @@
 package com.christopher.MagicWorld;
 
 public class Mage extends Personnage implements Attaque{
-    public Mage() {
+
+
+    public Mage(String player) {
+        super(player);
     }
 
     @Override
@@ -15,7 +18,7 @@ public class Mage extends Personnage implements Attaque{
     }
 
     @Override
-    public void AttaqueSpecial() {
+    public void attaqueSpecial() {
 
     }
 }

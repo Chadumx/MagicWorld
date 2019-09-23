@@ -28,11 +28,11 @@ public class Joueur {
             choix = clavier.nextInt();
 
             switch (choix){
-                case 1 : classe = (new Guerrier()).remplir(player);
+                case 1 : classe = new Guerrier(player);
                 break;
-                case 2 : classe = (new Rodeur()).remplir(player);
+                case 2 : classe = new Rodeur(player);
                 break;
-                case 3 : classe = (new Mage()).remplir(player);
+                case 3 : classe = new Mage(player);
                 break;
                 default : System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }

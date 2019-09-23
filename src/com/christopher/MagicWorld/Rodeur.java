@@ -1,9 +1,11 @@
 package com.christopher.MagicWorld;
 
 public class Rodeur extends Personnage implements Attaque{
-    public Rodeur() {
-    }
 
+
+    public Rodeur(String player) {
+        super(player);
+    }
 
     @Override
     public String getType() {
@@ -16,7 +18,7 @@ public class Rodeur extends Personnage implements Attaque{
     }
 
     @Override
-    public void AttaqueSpecial() {
+    public void attaqueSpecial() {
 
     }
 }

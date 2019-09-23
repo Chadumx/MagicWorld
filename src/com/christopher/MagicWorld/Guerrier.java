@@ -2,9 +2,10 @@ package com.christopher.MagicWorld;
 
 public class Guerrier extends Personnage implements Attaque{
 
-    public Guerrier() {
-    }
 
+    public Guerrier(String player) {
+        super(player);
+    }
 
     @Override
     public String getType() {
@@ -14,10 +15,11 @@ public class Guerrier extends Personnage implements Attaque{
     @Override
     public void attaqueBase() {
 
+
     }
 
     @Override
-    public void AttaqueSpecial() {
+    public void attaqueSpecial() {
 
     }
 }
