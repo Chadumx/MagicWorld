@@ -13,13 +13,12 @@ public class Guerrier extends Personnage implements Attaque{
     }
 
     @Override
-    public void attaqueBase() {
-
+    public void attaqueBase(int force, int niveau, int agilite, int intelligence, int vitalite) {
 
     }
 
     @Override
-    public void attaqueSpecial() {
+    public void attaqueSpecial(int force, int niveau, int agilite, int intelligence, int vitalite) {
 
     }
 }

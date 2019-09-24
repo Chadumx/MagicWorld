@@ -6,26 +6,28 @@ public class Combats {
 
     Scanner clavier = new Scanner(System.in);
 
-    private int attaque;
+    Personnage.getClasse
 
     public Combats() {
 
-        int choix;
+        int choix1;
 
-       do {
+        do {
 
-           System.out.println("(1: Guerrier 2: Rôdeur 3: Mage)");
-           choix = clavier.nextInt();
 
-           switch (attaque){
-               case 1 : attaque = new classe.attaqueBase();
-               break;
-               case 2 : attaque = new classe.attaqueSpecial();
-               break;
-               default :
-                   System.out.println("Erreur : veuillez selectionnez une des proposition donné.\nRecommencez :");
-           }
-       } while (attaque <= 0 || attaque >= 3);
+            System.out.println("(1: Attaque de base 2: Attaque Special)");
+            choix1 = clavier.nextInt();
+
+            switch (){
+
+                case 1 :
+                break;
+                case 2 :
+                break;
+                default : System.out.println("Erreur, veuillez choisir parmi les propositions donner !");
+
+            }
+
+        } while ( <= 0 ||  >= 3);
     }
-    
 }

@@ -28,15 +28,19 @@ public class Joueur {
             choix = clavier.nextInt();
 
             switch (choix){
-                case 1 : classe = new Guerrier(player);
+                case 1 : this.classe = new Guerrier(player);
                 break;
-                case 2 : classe = new Rodeur(player);
+                case 2 : this.classe = new Rodeur(player);
                 break;
-                case 3 : classe = new Mage(player);
+                case 3 : this.classe = new Mage(player);
                 break;
                 default : System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }
 
         } while ( choix <= 0 || choix >= 4);
      }
+
+    public Personnage getClasse() {
+        return classe;
+    }
 }

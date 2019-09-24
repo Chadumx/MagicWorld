@@ -10,14 +10,14 @@ public class MagicWorld {
 
 
         Joueur joueur1 = new Joueur();
-            player = "joueur n°1";
-            joueur1.choix(player);
+        player = "joueur n°1";
+        joueur1.choix(player);
 
         Joueur joueur2 = new Joueur();
-            player = "joueur n°2";
-            joueur2.choix(player);
+        player = "joueur n°2";
+        joueur2.choix(player);
 
-        Combats combats = new Combats(joueur1);
+
 
     }
 }
