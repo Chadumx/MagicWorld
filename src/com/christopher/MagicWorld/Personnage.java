@@ -2,11 +2,13 @@ package com.christopher.MagicWorld;
 
 import java.util.Scanner;
 
-public abstract class Personnage {
+public abstract class Personnage<AttaqueInterface> {
 
     public abstract String getType();
 
     private int niveau, force, agilite, intelligence, vitalite;
+    public AttaqueInterface AttaqueBasique;
+    public AttaqueInterface AttaqueSpecial;
 
     public Personnage (String player) {
         Scanner clavier = new Scanner(System.in);
@@ -26,7 +28,7 @@ public abstract class Personnage {
 
         this.vitalite = niveau * 5;
 
-        System.out.printf("%s je suis le %s du %s\n", this.crieGuerre(player), this.getType() , player);
+        System.out.printf("%s je suis le %s du %s je possede %s de vitalité, %s de Force, %s d'agilité et %s d'intelligence !\n", this.crieGuerre(player), this.getType() , player, vitalite, force, agilite, intelligence);
 
 }
 
@@ -38,6 +40,14 @@ public abstract class Personnage {
             temp = "Abracadabra";
         }
         return temp;
+    }
+
+    public AttaqueInterface getAttaqueBasique() {
+        return AttaqueBasique;
+    }
+
+    public AttaqueInterface getAttaqueSpecial(){
+        return AttaqueSpecial;
     }
 
     public int getNiveau() {

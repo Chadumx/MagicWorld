@@ -13,12 +13,12 @@ public class Rodeur extends Personnage implements Attaque{
     }
 
     @Override
-    public void attaqueBase(int force, int niveau, int agilite, int intelligence, int vitalite) {
-
+    public void attaqueBase() {
+        joueur1.vitalite = joueur1.vitalite - joueur2agilite;
     }
 
     @Override
-    public void attaqueSpecial(int force, int niveau, int agilite, int intelligence, int vitalite) {
-
+    public void attaqueSpecial() {
+        joueur2.agilite = joueur2.agilite + (joueur2.agilite / 2);
     }
 }

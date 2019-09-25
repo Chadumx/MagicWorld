@@ -17,7 +17,11 @@ public class MagicWorld {
         player = "joueur n°2";
         joueur2.choix(player);
 
-
-
+        do {
+            player = "joueur n°1";
+            Combats combat1 = new Combats(joueur1, player);
+            player = "joueur n°2";
+            Combats combat2 = new Combats(joueur2, player);
+        } while (joueur1.getVitalite = 0 || joueur2.getVitalite)
     }
 }

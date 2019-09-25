@@ -43,4 +43,7 @@ public class Joueur {
     public Personnage getClasse() {
         return classe;
     }
+
+
+
 }
