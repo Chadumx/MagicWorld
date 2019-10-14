@@ -2,15 +2,15 @@ package com.christopher.MagicWorld;
 
 import java.util.Scanner;
 
-public abstract class Personnage<AttaqueInterface> {
+public abstract class Personnage {
 
     public abstract String getType();
+    public abstract int AttaqueBasique();
+    public abstract int AttaqueSpecial();
 
-    private int niveau, force, agilite, intelligence, vitalite;
-    public AttaqueInterface AttaqueBasique;
-    public AttaqueInterface AttaqueSpecial;
+    protected int niveau, force, agilite, intelligence, vitalite;
 
-    public Personnage (String player) {
+    public Personnage () {
         Scanner clavier = new Scanner(System.in);
         do {
             System.out.println("Niveau du personnage ?");
@@ -28,13 +28,12 @@ public abstract class Personnage<AttaqueInterface> {
 
         this.vitalite = niveau * 5;
 
-        System.out.printf("%s je suis le %s du %s je possede %s de vitalité, %s de Force, %s d'agilité et %s d'intelligence !\n", this.crieGuerre(player), this.getType() , player, vitalite, force, agilite, intelligence);
+        System.out.printf("%s je suis le %s du %s je possede %s de vitalité, %s de Force, %s d'agilité et %s d'intelligence !\n", this.crieGuerre(), this.getType() , 12, vitalite, force, agilite, intelligence);
+    }
 
-}
-
-    public String crieGuerre(String player){
+    public String crieGuerre(){
         String temp = null;
-        if (player.equalsIgnoreCase("joueur n°1")){
+        if (.equalsIgnoreCase("joueur 1")){
             temp = "Woarg";
         } else {
             temp = "Abracadabra";
@@ -42,51 +41,23 @@ public abstract class Personnage<AttaqueInterface> {
         return temp;
     }
 
-    public AttaqueInterface getAttaqueBasique() {
-        return AttaqueBasique;
-    }
-
-    public AttaqueInterface getAttaqueSpecial(){
-        return AttaqueSpecial;
-    }
-
-    public int getNiveau() {
-        return niveau;
-    }
-
-    public void setNiveau(int niveau) {
-        this.niveau = niveau;
+    public int getVitalite() {
+        return this.vitalite;
     }
 
     public int getForce() {
         return force;
     }
 
-    public void setForce(int force) {
-        this.force = force;
-    }
-
     public int getAgilite() {
         return agilite;
-    }
-
-    public void setAgilite(int agilite) {
-        this.agilite = agilite;
     }
 
     public int getIntelligence() {
         return intelligence;
     }
 
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public int getVitalite() {
-        return vitalite;
-    }
-
-    public void setVitalite(int vitalite) {
-        this.vitalite = vitalite;
+    public int getNiveau() {
+        return niveau;
     }
 }

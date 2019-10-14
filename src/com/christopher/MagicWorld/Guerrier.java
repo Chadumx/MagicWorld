@@ -1,10 +1,9 @@
 package com.christopher.MagicWorld;
 
-public class Guerrier extends Personnage implements Attaque{
+public class Guerrier extends Personnage /* extends Classe */ {
 
-
-    public Guerrier(String player) {
-        super(player);
+    public Guerrier() {
+        super();
     }
 
     @Override
@@ -13,16 +12,13 @@ public class Guerrier extends Personnage implements Attaque{
     }
 
     @Override
-    public void attaqueBase() {
-
-       Joueur1.vitalite() = Joueur1.vitalite()  - Joueur2.force();
+    public int AttaqueBasique() {
+        return this.force;
     }
 
     @Override
-    public void attaqueSpecial() {
-        Joueur1.vitalite() = joueur1.vitalite() - (joueur2.force() * 2);
-        Joueur2.vitalite() = joueur2.vitalite() - (joueur2.force() / 2);
+    public int AttaqueSpecial() {
+        return this.force * 2;
     }
-
 
 }

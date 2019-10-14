@@ -6,29 +6,38 @@ public class Combats {
 
     Scanner clavier = new Scanner(System.in);
 
-    public Combats(Object Joueur, String player) {
+    public void Attaque(Joueur joueur1, Joueur joueur2){
 
-        int choix1;
-        String attaque;
+        Joueur actuel = joueur1;
+        Joueur ennemi = joueur2;
 
-        System.out.print("%s (%s de vitalite) veuillez choisir votre action ",);
+        boolean j1 = true;
 
-        do {
+        do{
+            System.out.println(actuel.getPlayerName() + "( " + actuel.getVitalite() + " ) Veuillez choisir une attque (1 : attaque basique 2 : attaque spéciale)");
+            int choix = clavier.nextInt();
 
-            System.out.println("(1: Attaque de base 2: Attaque Special)");
-            choix1 = clavier.nextInt();
-
-            switch (choix1){
-
-                case 1 : attaque = (String) new Joueur().getClasse().getAttaqueBasique(Object Joueur);
+            switch (choix){
+                case 1: ennemi.getClasse().vitalite =- actuel.getClasse().AttaqueBasique();
                 break;
-                case 2 : attaque = (String) new Joueur().getClasse().getAttaqueSpecial();
+                case 2: ennemi.getClasse().vitalite = actuel.getClasse().AttaqueSpecial();
                 break;
-                default : System.out.println("Erreur, veuillez choisir parmi les propositions donner !");
-
+                default: System.out.print("Erreur (recommencez) : ");
+                continue;
             }
 
-        } while ( choix1 <= 0 || choix1 >= 3);
+            if (j1 == true) {
+                actuel = joueur2;
+                ennemi = joueur1;
+                j1 = false;
+            } else {
+                actuel = joueur1;
+                ennemi = joueur2;
+                j1 = true;
+            }
+
+        } while (joueur1.getVitalite() > 0 || joueur2.getVitalite() > 0);
+
     }
 
 }

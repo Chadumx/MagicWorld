@@ -1,10 +1,9 @@
 package com.christopher.MagicWorld;
 
-public class Rodeur extends Personnage implements Attaque{
+public class Rodeur extends Personnage {
 
-
-    public Rodeur(String player) {
-        super(player);
+    public Rodeur() {
+        super();
     }
 
     @Override
@@ -13,12 +12,12 @@ public class Rodeur extends Personnage implements Attaque{
     }
 
     @Override
-    public void attaqueBase() {
-        joueur1.vitalite = joueur1.vitalite - joueur2agilite;
+    public int AttaqueBasique() {
+        return this.agilite;
     }
 
     @Override
-    public void attaqueSpecial() {
-        joueur2.agilite = joueur2.agilite + (joueur2.agilite / 2);
+    public int AttaqueSpecial() {
+        return AttaqueSpecial();
     }
 }
