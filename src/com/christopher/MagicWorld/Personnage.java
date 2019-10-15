@@ -33,7 +33,7 @@ public abstract class Personnage {
 
     public String crieGuerre(){
         String temp = null;
-        if (.equalsIgnoreCase("joueur 1")){
+        if (true){//getClass()..equalsIgnoreCase("joueur 1")){
             temp = "Woarg";
         } else {
             temp = "Abracadabra";

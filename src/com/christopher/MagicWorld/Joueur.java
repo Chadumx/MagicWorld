@@ -19,7 +19,7 @@ public class Joueur {
         counter.increment();
     }
 
-    String getPlayerName() {
+    public String getPlayerName() {
         return player;
     }
 
@@ -55,13 +55,4 @@ public class Joueur {
     public Personnage getClasse() {
         return classe;
     }
-
-    public int getVitalite() {
-        return this.classe.getVitalite();
-    }
-
-    public int getForce(){
-        return this.classe.getForce();
-    }
-
 }

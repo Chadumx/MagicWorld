@@ -8,36 +8,47 @@ public class Combats {
 
     public void Attaque(Joueur joueur1, Joueur joueur2){
 
-        Joueur actuel = joueur1;
-        Joueur ennemi = joueur2;
+        Joueur attaquant = joueur1;
+        Joueur defenseur = joueur2;
 
         boolean j1 = true;
 
         do{
-            System.out.println(actuel.getPlayerName() + "( " + actuel.getVitalite() + " ) Veuillez choisir une attque (1 : attaque basique 2 : attaque spéciale)");
+            System.out.printf("%s (%s vitalité) Veuillez choisir une attque (1 : attaque basique, 2 : attaque spéciale)\n", attaquant.getPlayerName(), attaquant.getClasse().vitalite);
             int choix = clavier.nextInt();
 
             switch (choix){
-                case 1: ennemi.getClasse().vitalite =- actuel.getClasse().AttaqueBasique();
+                case 1: defenseur.getClasse().vitalite =- attaquant.getClasse().AttaqueBasique();
+                        System.out.printf("%s utilise %s et inflige %s dommages.\n", attaquant.getPlayerName(), attaquant.getClasse(), attaquant.getClasse().AttaqueBasique());
+                        System.out.printf("%s perd %s points de vie.\n", defenseur.getPlayerName(), attaquant.getClasse().AttaqueBasique());
                 break;
-                case 2: ennemi.getClasse().vitalite = actuel.getClasse().AttaqueSpecial();
+                case 2: classeAttaqueSpecial(attaquant, defenseur);
+                        System.out.printf("");
+                        System.out.printf("");
                 break;
                 default: System.out.print("Erreur (recommencez) : ");
                 continue;
             }
 
             if (j1 == true) {
-                actuel = joueur2;
-                ennemi = joueur1;
+                attaquant = joueur2;
+                defenseur = joueur1;
                 j1 = false;
             } else {
-                actuel = joueur1;
-                ennemi = joueur2;
+                attaquant = joueur1;
+                defenseur = joueur2;
                 j1 = true;
             }
 
-        } while (joueur1.getVitalite() > 0 || joueur2.getVitalite() > 0);
+        } while (joueur1.getClasse().vitalite > 0 || joueur2.getClasse().vitalite > 0);
 
     }
 
+    public void classeAttaqueSpecial(Joueur attaquant, Joueur defenseur){
+        if (attaquant.getClasse().getType().equalsIgnoreCase("Guerrier")) {
+            defenseur.getClasse().vitalite =- attaquant.getClasse().AttaqueSpecial();
+        } else {
+            attaquant.getClasse().AttaqueSpecial();
+        }
+    }
 }

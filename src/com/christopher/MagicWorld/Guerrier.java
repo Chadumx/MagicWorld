@@ -1,6 +1,6 @@
 package com.christopher.MagicWorld;
 
-public class Guerrier extends Personnage /* extends Classe */ {
+public class Guerrier extends Personnage {
 
     public Guerrier() {
         super();
