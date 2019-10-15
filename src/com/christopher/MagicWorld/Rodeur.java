@@ -18,6 +18,17 @@ public class Rodeur extends Personnage {
 
     @Override
     public int AttaqueSpecial() {
-        return AttaqueSpecial();
+        this.agilite += this.niveau / 2;
+        return this.agilite;
+    }
+
+    @Override
+    public String NomAttaqueBasique() {
+        return "tire à l'arc";
+    }
+
+    @Override
+    public String NomAttaqueSpecial() {
+        return "concentration";
     }
 }

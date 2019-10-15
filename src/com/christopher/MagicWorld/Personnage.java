@@ -7,6 +7,8 @@ public abstract class Personnage {
     public abstract String getType();
     public abstract int AttaqueBasique();
     public abstract int AttaqueSpecial();
+    public abstract String NomAttaqueBasique();
+    public abstract String NomAttaqueSpecial();
 
     protected int niveau, force, agilite, intelligence, vitalite;
 

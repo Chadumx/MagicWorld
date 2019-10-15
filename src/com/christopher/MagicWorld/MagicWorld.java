@@ -1,7 +1,5 @@
 package com.christopher.MagicWorld;
 
-import com.christopher.MagicWorld.Joueur;
-
 public class MagicWorld {
 
     public static void main(String[] args) {
@@ -14,5 +12,8 @@ public class MagicWorld {
 
         Combats attaque = new Combats();
         attaque.Attaque(joueur1, joueur2);
+
+        Final fin = new Final();
+        fin.Fin(joueur1, joueur2);
     }
 }
