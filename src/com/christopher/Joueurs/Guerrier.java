@@ -1,9 +1,9 @@
-package com.christopher.MagicWorld;
+package com.christopher.Joueurs;
 
 public class Guerrier extends Personnage {
 
-    public Guerrier() {
-        super();
+    public Guerrier(String joueurName) {
+        super(joueurName);
     }
 
     @Override
@@ -18,7 +18,10 @@ public class Guerrier extends Personnage {
 
     @Override
     public int AttaqueSpecial() {
+        System.out.println( this.vitalite);
         this.vitalite -= (this.force / 2);
+
+        System.out.println( this.vitalite);
         return this.force * 2;
     }
 

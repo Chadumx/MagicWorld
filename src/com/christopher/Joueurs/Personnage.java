@@ -1,4 +1,4 @@
-package com.christopher.MagicWorld;
+package com.christopher.Joueurs;
 
 import java.util.Scanner;
 
@@ -10,9 +10,13 @@ public abstract class Personnage {
     public abstract String NomAttaqueBasique();
     public abstract String NomAttaqueSpecial();
 
+    protected String player;
+
     protected int niveau, force, agilite, intelligence, vitalite;
 
-    public Personnage () {
+    public Personnage(String joueurName) {
+
+       this.player = joueurName;
         Scanner clavier = new Scanner(System.in);
         do {
             System.out.println("Niveau du personnage ?");
@@ -30,12 +34,32 @@ public abstract class Personnage {
 
         this.vitalite = niveau * 5;
 
-        System.out.printf("%s je suis le %s du %s je possede %s de vitalité, %s de Force, %s d'agilité et %s d'intelligence !\n", this.crieGuerre(), this.getType() , 12, vitalite, force, agilite, intelligence);
+        System.out.printf("%s je suis le %s du %s je possede %s de vitalité, %s de Force, %s d'agilité et %s d'intelligence !\n", this.crieGuerre(), this.getType() , player, vitalite, force, agilite, intelligence);
+    }
+
+    public int getNiveau() {
+        return niveau;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public int getAgilite() {
+        return agilite;
+    }
+
+    public int getForce() {
+        return force;
+    }
+
+    public int getVitalite() {
+        return vitalite;
     }
 
     public String crieGuerre(){
         String temp = null;
-        if (true){//getClass()..equalsIgnoreCase("joueur 1")){
+        if (player.equalsIgnoreCase("joueur 1")){
             temp = "Woarg";
         } else {
             temp = "Abracadabra";
@@ -43,23 +67,7 @@ public abstract class Personnage {
         return temp;
     }
 
-    public int getVitalite() {
-        return this.vitalite;
-    }
-
-    public int getForce() {
-        return force;
-    }
-
-    public int getAgilite() {
-        return agilite;
-    }
-
-    public int getIntelligence() {
-        return intelligence;
-    }
-
-    public int getNiveau() {
-        return niveau;
+    public String getPlayer() {
+        return player;
     }
 }

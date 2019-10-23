@@ -1,4 +1,6 @@
-package com.christopher.MagicWorld;
+package com.christopher.Joueurs;
+
+import com.christopher.Parties.Counter;
 
 import java.util.Scanner;
 
@@ -40,11 +42,11 @@ public class Joueur {
             choix = clavier.nextInt();
 
             switch (choix){
-                case 1 : this.classe = new Guerrier();
+                case 1 : this.classe = new Guerrier(player);
                 break;
-                case 2 : this.classe = new Rodeur();
+                case 2 : this.classe = new Rodeur(player);
                 break;
-                case 3 : this.classe = new Mage();
+                case 3 : this.classe = new Mage(player);
                 break;
                 default : System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }

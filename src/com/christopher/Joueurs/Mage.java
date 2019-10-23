@@ -1,11 +1,11 @@
-package com.christopher.MagicWorld;
+package com.christopher.Joueurs;
 
 public class Mage extends Personnage {
 
     public final int VITALITE = this.vitalite;
 
-    public Mage() {
-        super();
+    public Mage(String joueurName) {
+        super(joueurName);
     }
 
     @Override

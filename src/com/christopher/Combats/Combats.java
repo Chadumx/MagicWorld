@@ -1,4 +1,6 @@
-package com.christopher.MagicWorld;
+package com.christopher.Combats;
+
+import com.christopher.Joueurs.Joueur;
 
 import java.util.Scanner;
 
@@ -8,14 +10,18 @@ public class Combats {
 
     public void Attaque(Joueur joueur1, Joueur joueur2){
 
+        /**
+         * 1 joueur1 attaque joueur2
+         * si joueur2 n'est pas mort
+         * Joueur2 attaque joueur1
+         * si joueur1 n'est pas mort recommencez
+         */
+
         Joueur attaquant = joueur1;
         Joueur defenseur = joueur2;
         Joueur temp;
 
-        boolean j1 = true;
-
-        do{
-            System.out.printf("%s (%s vitalité) Veuillez choisir une attaque (1 : attaque basique, 2 : attaque spéciale)\n", attaquant.getPlayerName(), attaquant.getClasse().vitalite);
+            System.out.printf("%s (%s vitalité) Veuillez choisir une attaque (1 : attaque basique, 2 : attaque spéciale)\n", attaquant.getPlayerName(), attaquant.getClasse().getVitalite());
             int choix = clavier.nextInt();
 
             switch (choix){
@@ -33,8 +39,6 @@ public class Combats {
             attaquant = defenseur;
             defenseur = temp;
 
-        } while (joueur1.getClasse().vitalite > 0 || joueur2.getClasse().vitalite > 0);
-
     }
 
     public void classeAttaqueSpecial(Joueur attaquant, Joueur defenseur){
@@ -44,7 +48,7 @@ public class Combats {
             defenseur.getClasse().vitalite -= attaquant.getClasse().AttaqueSpecial();
             System.out.printf("%s utilise %s et inflige %s de dommages\n", attaquant.getPlayerName(), attaquant.getClasse().NomAttaqueSpecial(), attaquant.getClasse().AttaqueSpecial());
             System.out.printf("%s perd %s point de vie\n", defenseur.getPlayerName(), attaquant.getClasse().AttaqueSpecial());
-            System.out.printf("%s perd %s points de vie\n", attaquant.getPlayerName(), (attaquant.getClasse().getForce() / 2));
+            System.out.printf("%s perd %s points de vie\n", attaquant.getPlayerName(), (attaquant.getClasse().force / 2));
 
         } else if (attaquant.getClasse().getType().equalsIgnoreCase("Rôdeur")) {
 

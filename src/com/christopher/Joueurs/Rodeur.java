@@ -1,9 +1,11 @@
-package com.christopher.MagicWorld;
+package com.christopher.Joueurs;
+
+import com.christopher.Joueurs.Personnage;
 
 public class Rodeur extends Personnage {
 
-    public Rodeur() {
-        super();
+    public Rodeur(String joueurName) {
+        super(joueurName);
     }
 
     @Override
