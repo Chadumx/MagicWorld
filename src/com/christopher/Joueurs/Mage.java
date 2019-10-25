@@ -14,28 +14,27 @@ public class Mage extends Personnage {
     }
 
     @Override
-    public int AttaqueBasique() {
-        return this.intelligence;
+    public void AttaqueBasique(Joueur defenseur) {
+
+        int vitalite = defenseur.getClasse().getVitalite() - this.intelligence;
+        defenseur.getClasse().setVitalite(vitalite);
+
+        System.out.printf("%s utilise %s et inflige %s dommages\n", this.player, "boule de feu", this.intelligence);
+        System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.intelligence);
     }
 
     @Override
-    public int AttaqueSpecial() {
+    public void AttaqueSpecial(Joueur defenseur) {
 
-        vitalite += intelligence * 2;
+        int temp = this.vitalite;
+        this.vitalite += this.intelligence * 2;
 
-        if (vitalite > VITALITE){
-            vitalite = VITALITE;
+        if (this.vitalite > VITALITE){
+            this.vitalite = VITALITE;
         }
-        return vitalite;
-    }
 
-    @Override
-    public String NomAttaqueBasique() {
-        return "boule de feu";
-    }
+        int gainVitalite = this.vitalite - temp;
 
-    @Override
-    public String NomAttaqueSpecial() {
-        return "soin";
+        System.out.printf("%s utilise %s et gagne %s en vitalité\n", this.player, "soin", gainVitalite);
     }
 }

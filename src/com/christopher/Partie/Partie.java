@@ -1,22 +1,30 @@
-package com.christopher.Parties;
+package com.christopher.Partie;
 
 import com.christopher.Combats.Combats;
 import com.christopher.Joueurs.Joueur;
 
-public class Parties {
+public class Partie {
 
-    public Parties(){
+    Joueur joueur1 = new Joueur();
+    Joueur joueur2 = new Joueur();
+    Joueur attaquant;
+    Joueur defenseur;
 
-        Joueur joueur1 = new Joueur();
+    public Partie(){
+
         joueur1.choix();
-
-        Joueur joueur2 = new Joueur();
         joueur2.choix();
+        attaquant = joueur1;
+        defenseur = joueur2;
 
         do{
 
             Combats attaque = new Combats();
-            attaque.Attaque(joueur1, joueur2);
+            attaque.Attaque(attaquant, defenseur);
+
+            Joueur temp = attaquant;
+            attaquant = defenseur;
+            defenseur = temp;
 
         } while (joueur1.getClasse().getVitalite() > 0 || joueur2.getClasse().getVitalite() > 0);
 

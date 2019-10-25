@@ -1,7 +1,8 @@
 package com.christopher.Joueurs;
 
-import com.christopher.Parties.Counter;
+import com.christopher.Partie.Counter;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -34,12 +35,16 @@ public class Joueur {
 
         System.out.printf("Création du personnage du %s\n", player);
         System.out.print("Veuillez choisir la classe de votre personnage ");
-        int choix;
+        int choix = 0;
 
         do{
 
-            System.out.println("(1: Guerrier 2: Rôdeur 3: Mage)");
-            choix = clavier.nextInt();
+            try {
+                System.out.println("(1: Guerrier 2: Rôdeur 3: Mage)");
+                choix = clavier.nextInt();
+            } catch (InputMismatchException e) {
+                clavier.nextLine();
+            }
 
             switch (choix){
                 case 1 : this.classe = new Guerrier(player);
@@ -51,7 +56,7 @@ public class Joueur {
                 default : System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }
 
-        } while ( choix <= 0 || choix >= 4);
+        } while (choix <= 0 || choix >= 4);
     }
 
     public Personnage getClasse() {

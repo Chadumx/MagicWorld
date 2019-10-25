@@ -1,4 +1,4 @@
-package com.christopher.Parties;
+package com.christopher.Partie;
 
 // Counter est singleton, c'est à dire une classe qui est instanciée une seule fois dans tout mon code.
 // En mettant private Counter, on crée une sorte de classe static accessible de partout avec les mêmes attributs dans

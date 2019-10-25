@@ -14,23 +14,22 @@ public class Rodeur extends Personnage {
     }
 
     @Override
-    public int AttaqueBasique() {
-        return this.agilite;
+    public void AttaqueBasique(Joueur defenseur) {
+
+        int vitalite = defenseur.getClasse().getVitalite() - this.agilite;
+        defenseur.getClasse().setVitalite(vitalite);
+
+        System.out.printf("%s utilise %s et inflige %s dommages\n", this.player, "tire à l'arc", this.agilite);
+        System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.agilite);
     }
 
     @Override
-    public int AttaqueSpecial() {
+    public void AttaqueSpecial(Joueur defenseur) {
+
+        int temp = this.agilite;
         this.agilite += this.niveau / 2;
-        return this.agilite;
-    }
+        int gainAgilite = this.agilite - temp;
 
-    @Override
-    public String NomAttaqueBasique() {
-        return "tire à l'arc";
-    }
-
-    @Override
-    public String NomAttaqueSpecial() {
-        return "concentration";
+        System.out.printf("%s utilise %s et gagne %s en agilité\n", this.player, "concentration", gainAgilite);
     }
 }
