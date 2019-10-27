@@ -1,33 +1,40 @@
 package com.christopher.Partie;
 
-// Counter est singleton, c'est à dire une classe qui est instanciée une seule fois dans tout mon code.
-// En mettant private Counter, on crée une sorte de classe static accessible de partout avec les mêmes attributs dans
-// toute l'application.
+/** Counter est un singleton, permet d'attribuer un numero unique à chaque joueur.
+ */
 public class Counter
 {
-    // implémenté sous forme de singleton //
+    // creation du singleton
     private static Counter singleton = new Counter();
 
-    // Le nombre du compteur
+    // initialisation de la variable number
     private int number =  1;
 
-    // On empêche l'instanciation de la classe pour éviter d'avoir de multiple "Counter / Compteur"
+    // Empêche l'instanciation de plusieur Counter
     private Counter()
     {
-        // protection
     }
 
-    // Etant static on accède de partout au même Objet Counter qui se contient lui même (donc une seule fois)
+    /**
+     * Etant static on accède de partout au même
+     * Objet Counter qui se contient lui même (donc une seule fois).
+     * @return retourne la valeur de singleton
+     */
     public static Counter getInstance()
     {
         return singleton;
     }
 
+    /**
+     * permet d'interoger la valeur de number.
+     * @return retourne la valeur de number.
+     */
     public int getCounter()
     {
         return number;
     }
 
+    // incremente number de +1 a chaque appele de l'instance
     public void increment()
     {
        number += 1;

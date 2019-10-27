@@ -1,18 +1,33 @@
 package com.christopher.Joueurs;
 
+/**
+ *definie la methode des differentes attaques de la classe mage.
+ */
 public class Mage extends Personnage {
 
     public final int VITALITE = this.vitalite;
 
+    /**
+     * defini les attributs de la classe mage.
+     * @param joueurName donne le nom du joueur.
+     */
     public Mage(String joueurName) {
         super(joueurName);
     }
 
+    /**
+     * permet de retourne le nom de la classe mage.
+     * @return le nom de la classse mage.
+     */
     @Override
     public String getType() {
         return "Mage";
     }
 
+    /**
+     * definie l'attaque basique de la classe mage.
+     * @param defenseur donne les attributs du defenseur.
+     */
     @Override
     public void AttaqueBasique(Joueur defenseur) {
 
@@ -23,6 +38,10 @@ public class Mage extends Personnage {
         System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.intelligence);
     }
 
+    /**
+     * definie l'attaque speciale de la classe mage.
+     * @param defenseur donne les attributs du defenseur.
+     */
     @Override
     public void AttaqueSpecial(Joueur defenseur) {
 

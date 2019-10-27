@@ -6,6 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * Determine la classe du personnage.
  * @author christopher
  */
 public class Joueur {
@@ -22,15 +23,17 @@ public class Joueur {
         counter.increment();
     }
 
+    /**
+     *permet de savoir le nom du joueur.
+     * @return le nom du joueur.
+     */
     public String getPlayerName() {
         return player;
     }
 
     /**
-     * Choix du personnage
-     *
+     *Permet de choisir la classe du personange.
      */
-    // public Joueur() {
     public void choix() {
 
         System.out.printf("Création du personnage du %s\n", player);
@@ -59,6 +62,10 @@ public class Joueur {
         } while (choix <= 0 || choix >= 4);
     }
 
+    /**
+     * permet de retourne la classe du personnage.
+     * @return retourne la classe du personnage.
+     */
     public Personnage getClasse() {
         return classe;
     }

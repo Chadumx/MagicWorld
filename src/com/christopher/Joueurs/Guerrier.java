@@ -1,16 +1,30 @@
 package com.christopher.Joueurs;
 
+/**
+ *definie la methode des differentes attaques de la classe guerriers.
+ */
 public class Guerrier extends Personnage {
-
+    /**
+     * Permet de definir les attributs de la classe guerrier.
+     * @param joueurName donne le nom du joueur.
+     */
     public Guerrier(String joueurName) {
         super(joueurName);
     }
 
+    /**
+     *permet de retourner le nom de la classe guerriers.
+     * @return le nom de la classe guerriers.
+     */
     @Override
     public String getType() {
         return "Guerrier";
     }
 
+    /**
+     *definie l'attaque basique de la classe guerriers.
+     * @param defenseur donne les attributs du joueur en defense.
+     */
     @Override
     public void AttaqueBasique(Joueur defenseur) {
 
@@ -21,6 +35,10 @@ public class Guerrier extends Personnage {
         System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.force);
     }
 
+    /**
+     * definie l'attaque speciale de la classe guerriers.
+     * @param defenseur donne les attributs du joueur en defense.
+     */
     @Override
     public void AttaqueSpecial(Joueur defenseur) {
 

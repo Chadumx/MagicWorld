@@ -1,4 +1,4 @@
-package com.christopher.MagicWorld;
+package com.christopher.Joueurs;
 
 import org.junit.jupiter.api.Test;
 

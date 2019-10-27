@@ -1,18 +1,30 @@
 package com.christopher.Joueurs;
 
-import com.christopher.Joueurs.Personnage;
-
+/**
+ *definie la methode des differentes attaques de la classe rodeur.
+ */
 public class Rodeur extends Personnage {
-
-    public Rodeur(String joueurName) {
+    /**
+     *permet de definir les attributs de la classe rodeur.
+     * @param joueurName donne le nom du joueur.
+     */
+    public Rodeur(String joueurName)  {
         super(joueurName);
     }
 
+    /**
+     *permet de retourner le nom de la classe rodeur.
+     * @return le nom de la classe rodeur.
+     */
     @Override
     public String getType() {
         return "Rôdeur";
     }
 
+    /**
+     *definie l'attause basique de la classe rodeur.
+     * @param defenseur donne les attributs du defenseur.
+     */
     @Override
     public void AttaqueBasique(Joueur defenseur) {
 
@@ -23,6 +35,10 @@ public class Rodeur extends Personnage {
         System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.agilite);
     }
 
+    /**
+     * defini l'attaque speciale de la classe rodeur.
+     * @param defenseur donne les attributs du defenseur.
+     */
     @Override
     public void AttaqueSpecial(Joueur defenseur) {
 

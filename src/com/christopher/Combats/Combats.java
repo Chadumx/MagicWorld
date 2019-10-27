@@ -5,10 +5,18 @@ import com.christopher.Joueurs.Joueur;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * definie la methode de combats entre les differents joueurs.
+ */
 public class Combats {
 
     Scanner clavier = new Scanner(System.in);
 
+    /**
+     *
+     * @param attaquant donne les attributs de l'attaquant.
+     * @param defenseur donne les attributs du defenseur.
+     */
     public void Attaque(Joueur attaquant, Joueur defenseur){
 
         int choix = 0;
