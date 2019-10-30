@@ -1,37 +1,36 @@
 package com.christopher.Partie;
 
-import com.christopher.Combats.Combats;
-import com.christopher.Joueurs.Joueur;
+import com.christopher.Combat.Combats;
+import com.christopher.Joueur.Joueur;
 
 /**
  * Classe qui lance la partie et la gere.
  */
 public class Partie {
 
-    Joueur joueur1 = new Joueur();
-    Joueur joueur2 = new Joueur();
-    Joueur attaquant;
-    Joueur defenseur;
-
     /**
      *Constructeur de la classe Partie.
      */
-    public Partie(){
+    public static void start(){
+
+        Joueur joueur1 = new Joueur();
+        Joueur joueur2 = new Joueur();
+        Joueur attaquant = joueur1;
+        Joueur defenseur = joueur2;
 
         joueur1.choix();
         joueur2.choix();
-        attaquant = joueur1;
-        defenseur = joueur2;
 
         do{
 
             Combats attaque = new Combats();
-            attaque.Attaque(attaquant, defenseur);
+            attaque.attaque(attaquant, defenseur);
+
             Joueur temp = attaquant;
             attaquant = defenseur;
             defenseur = temp;
 
-        } while (joueur1.getClasse().getVitalite() > 0 || joueur2.getClasse().getVitalite() > 0);
+        } while (joueur1.getClasse().getVitalite() > 0 && joueur2.getClasse().getVitalite() > 0);
 
         fin(joueur1, joueur2);
     }
@@ -41,7 +40,7 @@ public class Partie {
      * @param joueur1 données lier au joueur N°1.
      * @param joueur2 données lier au joueur N°2.
      */
-    public void fin(Joueur joueur1, Joueur joueur2){
+    public static void fin(Joueur joueur1, Joueur joueur2){
 
         if (joueur1.getClasse().getVitalite() <= 0) {
             System.out.println("Joueur 1 a perdu !");

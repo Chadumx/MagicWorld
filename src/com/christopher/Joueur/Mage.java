@@ -1,4 +1,6 @@
-package com.christopher.Joueurs;
+package com.christopher.Joueur;
+
+import java.util.Scanner;
 
 /**
  *definie la methode des differentes attaques de la classe mage.
@@ -11,8 +13,8 @@ public class Mage extends Personnage {
      * defini les attributs de la classe mage.
      * @param joueurName donne le nom du joueur.
      */
-    public Mage(String joueurName) {
-        super(joueurName);
+    public Mage(String joueurName, Scanner clavier) {
+        super(joueurName, clavier);
     }
 
     /**
@@ -29,10 +31,10 @@ public class Mage extends Personnage {
      * @param defenseur donne les attributs du defenseur.
      */
     @Override
-    public void AttaqueBasique(Joueur defenseur) {
+    public void attaqueBasique(Joueur defenseur) {
 
-        int vitalite = defenseur.getClasse().getVitalite() - this.intelligence;
-        defenseur.getClasse().setVitalite(vitalite);
+        int vitalite = defenseur.getVitalite() - this.intelligence;
+        defenseur.setVitalite(vitalite);
 
         System.out.printf("%s utilise %s et inflige %s dommages\n", this.player, "boule de feu", this.intelligence);
         System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.intelligence);
@@ -43,7 +45,7 @@ public class Mage extends Personnage {
      * @param defenseur donne les attributs du defenseur.
      */
     @Override
-    public void AttaqueSpecial(Joueur defenseur) {
+    public void attaqueSpecial(Joueur defenseur) {
 
         int temp = this.vitalite;
         this.vitalite += this.intelligence * 2;

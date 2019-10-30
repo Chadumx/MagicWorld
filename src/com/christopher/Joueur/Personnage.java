@@ -1,4 +1,4 @@
-package com.christopher.Joueurs;
+package com.christopher.Joueur;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,8 +9,8 @@ import java.util.Scanner;
 public abstract class Personnage {
 
     public abstract String getType();
-    public abstract void AttaqueBasique(Joueur defenseur);
-    public abstract void AttaqueSpecial(Joueur defenseur);
+    public abstract void attaqueBasique(Joueur defenseur);
+    public abstract void attaqueSpecial(Joueur defenseur);
 
     protected String player;
 
@@ -20,11 +20,9 @@ public abstract class Personnage {
      *constructeur de la classe Personnage.
      * @param joueurName donne le nom du joueur.
      */
-    public Personnage(String joueurName) {
+    public Personnage(String joueurName, Scanner clavier) {
 
-       this.player = joueurName;
-       boolean testValeur = true;
-       Scanner clavier = new Scanner(System.in);
+        this.player = joueurName;
 
         do {
             try {
@@ -44,13 +42,12 @@ public abstract class Personnage {
                 if (niveau != force + agilite + intelligence) {
                     System.out.println("La somme total de la Force, de l'Agilité et de l'Intellignace doit être égal au niveau !\nRecommencez :");
                 }
-                testValeur = true;
             } catch (InputMismatchException e) {
                 System.out.printf("Erreur de frappe, seul les nombres entiers sont accepté !\nRecommencez :\n");
                 clavier.nextLine();
-                testValeur = false;
+                continue;
             }
-        } while (niveau != force + agilite + intelligence || testValeur == false);
+        } while (niveau != force + agilite + intelligence);
 
         this.vitalite = niveau * 5;
 
@@ -70,9 +67,25 @@ public abstract class Personnage {
      * @param vitalite definie la vitalite du joueur
      * @return la valeur modifier de la vitalite
      */
-    public int setVitalite(int vitalite) {
+    public Personnage setVitalite(int vitalite) {
         this.vitalite = vitalite;
-        return vitalite;
+        return this;
+    }
+
+    public int getForce() {
+        return force;
+    }
+
+    public int getAgilite() {
+        return agilite;
+    }
+
+    public int getNiveau() {
+        return niveau;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
     }
 
     /**
@@ -80,12 +93,11 @@ public abstract class Personnage {
      * @return le crie du personnage.
      */
     public String crieGuerre(){
-        String temp = null;
+
         if (player.equalsIgnoreCase("joueur 1")){
-            temp = "Woarg";
+            return "Woarg";
         } else {
-            temp = "Abracadabra";
+            return "Abracadabra";
         }
-        return temp;
     }
 }

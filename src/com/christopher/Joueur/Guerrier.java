@@ -1,4 +1,6 @@
-package com.christopher.Joueurs;
+package com.christopher.Joueur;
+
+import java.util.Scanner;
 
 /**
  *definie la methode des differentes attaques de la classe guerriers.
@@ -8,8 +10,8 @@ public class Guerrier extends Personnage {
      * Permet de definir les attributs de la classe guerrier.
      * @param joueurName donne le nom du joueur.
      */
-    public Guerrier(String joueurName) {
-        super(joueurName);
+    public Guerrier(String joueurName, Scanner clavier) {
+        super(joueurName, clavier);
     }
 
     /**
@@ -26,10 +28,10 @@ public class Guerrier extends Personnage {
      * @param defenseur donne les attributs du joueur en defense.
      */
     @Override
-    public void AttaqueBasique(Joueur defenseur) {
+    public void attaqueBasique(Joueur defenseur) {
 
-        int vitalite = defenseur.getClasse().getVitalite() - this.force;
-        defenseur.getClasse().setVitalite(vitalite);
+        int vitalite = defenseur.getVitalite() - this.force;
+        defenseur.setVitalite(vitalite);
 
         System.out.printf("%s utilise %s et inflige %s dommages\n", this.player, "coup d'épée", this.force);
         System.out.printf("%s perd %s points de vie\n", defenseur.getPlayerName(), this.force);
@@ -40,10 +42,10 @@ public class Guerrier extends Personnage {
      * @param defenseur donne les attributs du joueur en defense.
      */
     @Override
-    public void AttaqueSpecial(Joueur defenseur) {
+    public void attaqueSpecial(Joueur defenseur) {
 
-        int vitalite = defenseur.getClasse().getVitalite() - (this.force * 2);
-        defenseur.getClasse().setVitalite(vitalite);
+        int vitalite = defenseur.getVitalite() - (this.force * 2);
+        defenseur.setVitalite(vitalite);
 
         this.vitalite -= (this.force / 2);
 

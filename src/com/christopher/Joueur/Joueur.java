@@ -1,4 +1,4 @@
-package com.christopher.Joueurs;
+package com.christopher.Joueur;
 
 import com.christopher.Partie.Counter;
 
@@ -23,8 +23,14 @@ public class Joueur {
         counter.increment();
     }
 
+    public Joueur setClavier(Scanner clavier) {
+        this.clavier = clavier;
+
+        return this;
+    }
+
     /**
-     *permet de savoir le nom du joueur.
+     * Permet de savoir le nom du joueur.
      * @return le nom du joueur.
      */
     public String getPlayerName() {
@@ -32,9 +38,9 @@ public class Joueur {
     }
 
     /**
-     *Permet de choisir la classe du personange.
+     * Permet de choisir la classe du personange.
      */
-    public void choix() {
+    public Joueur choix() {
 
         System.out.printf("Création du personnage du %s\n", player);
         System.out.print("Veuillez choisir la classe de votre personnage ");
@@ -50,23 +56,51 @@ public class Joueur {
             }
 
             switch (choix){
-                case 1 : this.classe = new Guerrier(player);
-                break;
-                case 2 : this.classe = new Rodeur(player);
-                break;
-                case 3 : this.classe = new Mage(player);
-                break;
+                case 1 : this.classe = new Guerrier(player, this.clavier);
+                    break;
+                case 2 : this.classe = new Rodeur(player, this.clavier);
+                    break;
+                case 3 : this.classe = new Mage(player, this.clavier);
+                    break;
                 default : System.out.print("Erreur, veuillez choisir parmi les propositions donner ! ");
             }
 
         } while (choix <= 0 || choix >= 4);
+
+        return this;
     }
 
     /**
-     * permet de retourne la classe du personnage.
+     * Permet de retourne la classe du personnage.
      * @return retourne la classe du personnage.
      */
     public Personnage getClasse() {
         return classe;
+    }
+
+    public Joueur setVitalite (int val ){
+        this.classe.setVitalite(val);
+
+        return this;
+    }
+
+    public Joueur setAttaqueBasique(Joueur defenseur){
+        this.classe.attaqueBasique(defenseur);
+
+        return this;
+    }
+
+    public Joueur setAttaqueSpecial(Joueur defenseur){
+        this.classe.attaqueSpecial(defenseur);
+
+        return this;
+    }
+
+    public int getVitalite(){
+        return this.classe.getVitalite();
+    }
+
+    public void setClasse(Personnage classe) {
+        this.classe = classe;
     }
 }

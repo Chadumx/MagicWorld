@@ -1,6 +1,7 @@
 package com.christopher.Partie;
 
-/** Counter est un singleton, permet d'attribuer un numero unique à chaque joueur.
+/**
+ * Counter est un singleton, permet d'attribuer un numero unique à chaque joueur.
  */
 public class Counter
 {

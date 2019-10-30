@@ -6,7 +6,7 @@ public class MagicWorld {
 
     public static void main(String[] args) {
 
-        Partie partie1 = new Partie();
+        Partie.start();
 
     }
 }
