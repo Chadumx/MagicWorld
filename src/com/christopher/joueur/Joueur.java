@@ -1,6 +1,6 @@
-package com.christopher.Joueur;
+package com.christopher.joueur;
 
-import com.christopher.Partie.Counter;
+import com.christopher.partie.Counter;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

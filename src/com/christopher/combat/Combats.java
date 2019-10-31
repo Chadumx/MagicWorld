@@ -1,6 +1,6 @@
-package com.christopher.Combat;
+package com.christopher.combat;
 
-import com.christopher.Joueur.Joueur;
+import com.christopher.joueur.Joueur;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -43,5 +43,11 @@ public class Combats {
             }
 
         } while (choix < 1 || choix > 2);
+    }
+
+    public Combats setClavier(Scanner clavier) {
+        this.clavier = clavier;
+
+        return this;
     }
 }

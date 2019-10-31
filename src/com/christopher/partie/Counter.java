@@ -1,4 +1,4 @@
-package com.christopher.Partie;
+package com.christopher.partie;
 
 /**
  * Counter est un singleton, permet d'attribuer un numero unique à chaque joueur.

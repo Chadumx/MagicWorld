@@ -1,4 +1,4 @@
-package com.christopher.Joueur;
+package com.christopher.joueur;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

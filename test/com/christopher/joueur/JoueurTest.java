@@ -1,4 +1,4 @@
-package com.christopher.Joueur;
+package com.christopher.joueur;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,15 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JoueurTest {
 
-    /*
-     * joueur test a pour but de tester la creation du personnage et l'entrée des valeurs dans les differents attributs.
+    /**
+     * test la creation d'un personnage de classe guerrier.
      */
     @Test
-    public void testGuerrier() {
+    public void testCreationGuerrier() {
 
         // Initialise les futurs entrees claviers.
         System.setIn(new ByteArrayInputStream("1 100 100 0 0".getBytes()));
 
+        // Simule les entrees claviers.
         Joueur joueur = (new Joueur())
                 .setClavier(new Scanner(System.in))
                 .choix()
@@ -30,12 +31,16 @@ class JoueurTest {
         assertEquals(joueur.getVitalite(), 500);
     }
 
+    /**
+     * test la creation d'un personnage de classe rodeur.
+     */
     @Test
-    public void testRodeur() {
+    public void testCreationRodeur() {
 
         // Initialise les futurs entrees claviers.
         System.setIn(new ByteArrayInputStream("2 100 0 100 0".getBytes()));
 
+        // Simule les entrees claviers.
         Joueur joueur = (new Joueur())
                 .setClavier(new Scanner(System.in))
                 .choix()
@@ -48,12 +53,16 @@ class JoueurTest {
         assertEquals(joueur.getVitalite(), 500);
     }
 
+    /**
+     * test la creation d'un personnage de classe mage.
+     */
     @Test
-    public void testMage() {
+    public void testCreationMage() {
 
         // Initialise les futurs entrees claviers.
         System.setIn(new ByteArrayInputStream("3 100 0 0 100".getBytes()));
 
+        // Simule les entrees claviers.
         Joueur joueur = (new Joueur())
                 .setClavier(new Scanner(System.in))
                 .choix()

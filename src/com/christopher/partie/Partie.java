@@ -1,7 +1,7 @@
-package com.christopher.Partie;
+package com.christopher.partie;
 
-import com.christopher.Combat.Combats;
-import com.christopher.Joueur.Joueur;
+import com.christopher.combat.Combats;
+import com.christopher.joueur.Joueur;
 
 /**
  * Classe qui lance la partie et la gere.
@@ -40,12 +40,18 @@ public class Partie {
      * @param joueur1 données lier au joueur N°1.
      * @param joueur2 données lier au joueur N°2.
      */
-    public static void fin(Joueur joueur1, Joueur joueur2){
+    public static String fin(Joueur joueur1, Joueur joueur2){
 
-        if (joueur1.getClasse().getVitalite() <= 0) {
-            System.out.println("Joueur 1 a perdu !");
+        String fin = null;
+
+        if (joueur1.getVitalite() <= 0) {
+            fin = "Joueur 1 a perdu !";
+            System.out.println(fin);
         } else {
-            System.out.println("Joueur 2 a perdu !");
+            fin = "Joueur 2 a perdu !";
+            System.out.println(fin);
         }
+
+        return fin;
     }
 }

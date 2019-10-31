@@ -1,6 +1,6 @@
-package com.christopher.MagicWorld;
+package com.christopher.magicworld;
 
-import com.christopher.Partie.Partie;
+import com.christopher.partie.Partie;
 
 public class MagicWorld {
 
