@@ -9,6 +9,9 @@ import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * test le resultat de la methode fin().
+ */
 class PartieTest {
 
     @Test

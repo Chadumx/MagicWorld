@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 /**
  * Determine la classe du personnage.
- * @author christopher
  */
 public class Joueur {
 
@@ -23,6 +22,11 @@ public class Joueur {
         counter.increment();
     }
 
+    /**
+     * permet de faire des entrée automatiser pour les test.
+     * @param clavier initialisation de données
+     * @return la valeur a initialise dans Scanner
+     */
     public Joueur setClavier(Scanner clavier) {
         this.clavier = clavier;
 

@@ -10,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CombatsTest {
 
+    /**
+     * test d'une attaque basique.
+     */
     @Test
     void testAttaqueBasique(){
 
@@ -41,6 +44,9 @@ class CombatsTest {
 
     }
 
+    /**
+     * test de l'attaque speciale de la classe Guerrier.
+     */
     @Test
     void testAttaqueSpecialeGuerrier() {
 
@@ -73,6 +79,9 @@ class CombatsTest {
 
     }
 
+    /**
+     * test de l'attaque speciale de la classe Rodeur.
+     */
     @Test
     void testAttaqueSpecialeRodeur() {
 
@@ -96,6 +105,9 @@ class CombatsTest {
 
     }
 
+    /**
+     * test de l'attaque speciale de la classe Mage.
+     */
     @Test
     void testAttaqueSpecialeMage() {
 
